@@ -5,31 +5,33 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
+  background-color: black;
 }
 
 #stadium {
-  width: 360px;
+  position: relative;
+  background-color: #f1f1f1;
+  /*border: 1px dotted black;*/
+  width: 540px;
   height: 480px;
   --width: 18px;
   --height: 24px;
-  position: relative;
-  border: 1px solid black;
-  background-color: green;
 }
 
 .block {
   position: absolute;
+  background: url("metal.png");
+  background-size: inherit;
   width: var(--width);
   height: var(--height);
-  background-color: black;
   top: calc(var(--blockY) * var(--height));
   left: calc(var(--blockX) * var(--width));
 }
 
 #player1 {
   /* Variables declaradas en css */
-  top: calc(var(--y) * 1px);
-  left: calc(var(--x) * 1px);
+  /* top: calc(var(--y) * 1px);
+  left: calc(var(--x) * 1px); */
   background-size: cover;
   background: url("bomberman.png");
 }
@@ -40,4 +42,16 @@ body {
   position: absolute;
   background-position-y: calc(var(--height) * var(--direction) * -1);
   background-position-x: calc(var(--width) * var(--frame) * -1);
+  left: var(--x);
+  top: var(--y);
+}
+
+.blockBroken {
+  position: absolute;
+  background: url("ladrillos.png");
+  background-size: cover;
+  width: var(--width);
+  height: var(--height);
+  top: calc(var(--yblockBroken) * var(--height));
+  left: calc(var(--xblockBroken) * var(--width));
 }
