@@ -1,0 +1,43 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+#stadium {
+  width: 360px;
+  height: 480px;
+  --width: 18px;
+  --height: 24px;
+  position: relative;
+  border: 1px solid black;
+  background-color: green;
+}
+
+.block {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  background-color: black;
+  top: calc(var(--blockY) * var(--height));
+  left: calc(var(--blockX) * var(--width));
+}
+
+#player1 {
+  /* Variables declaradas en css */
+  top: calc(var(--y) * 1px);
+  left: calc(var(--x) * 1px);
+  background-size: cover;
+  background: url("bomberman.png");
+}
+
+#stadium .bomberman {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  background-position-y: calc(var(--height) * var(--direction) * -1);
+  background-position-x: calc(var(--width) * var(--frame) * -1);
+}
